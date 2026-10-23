@@ -33,16 +33,16 @@ jobs:
       - name: Diagnóstico da API (não altera o site)
         if: github.event.inputs.diagnostico != ''
         env:
-          SHOPEE_APP_ID: ${{ 18305180175 }}
-          SHOPEE_APP_SECRET: ${{ HUBHP4D4XKSGM3AXLNP7TWOJATP7P6PS }}
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_APP_SECRET: ${{ secrets.SHOPEE_APP_SECRET }}
           DIAG: ${{ github.event.inputs.diagnostico }}
         run: python3 bot/atualizar.py diagnostico "$DIAG"
 
       - name: Atualizar produtos
         if: github.event.inputs.diagnostico == ''
         env:
-          SHOPEE_APP_ID: ${{ 18305180175 }}
-          SHOPEE_APP_SECRET: ${{ HUBHP4D4XKSGM3AXLNP7TWOJATP7P6PS }}
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_APP_SECRET: ${{ secrets.SHOPEE_APP_SECRET }}
         run: python3 bot/atualizar.py
 
       - name: Salvar alterações no repositório
