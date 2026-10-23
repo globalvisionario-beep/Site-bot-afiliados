@@ -1,0 +1,75 @@
+name: Atualizar ofertas e publicar
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # todo dia às 06:00 (horário de Brasília)
+  workflow_dispatch:
+    inputs:
+      diagnostico:
+        description: "Opcional: palavra-chave ou itemId para testar a API (não altera o site)"
+        required: false
+        default: ""
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ofertas
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Diagnóstico da API (não altera o site)
+        if: github.event.inputs.diagnostico != ''
+        env:
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_APP_SECRET: ${{ secrets.SHOPEE_APP_SECRET }}
+          DIAG: ${{ github.event.inputs.diagnostico }}
+        run: python3 bot/atualizar.py diagnostico "$DIAG"
+
+      - name: Atualizar produtos
+        if: github.event.inputs.diagnostico == ''
+        env:
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_APP_SECRET: ${{ secrets.SHOPEE_APP_SECRET }}
+        run: python3 bot/atualizar.py
+
+      - name: Salvar alterações no repositório
+        if: github.event.inputs.diagnostico == ''
+        run: |
+          git config user.name "bot-ofertas"
+          git config user.email "bot-ofertas@users.noreply.github.com"
+          git add produtos.json
+          git commit -m "Atualização automática $(date -u +%F)" || echo "Nada para salvar"
+          git pull --rebase
+          git push
+
+      - name: Preparar site
+        if: github.event.inputs.diagnostico == ''
+        run: |
+          mkdir _site
+          cp index.html produtos.json _site/
+          [ -f CNAME ] && cp CNAME _site/ || true
+
+      - uses: actions/configure-pages@v5
+        if: github.event.inputs.diagnostico == ''
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event.inputs.diagnostico == ''
+        with:
+          path: _site
+
+      - id: deploy
+        if: github.event.inputs.diagnostico == ''
+        uses: actions/deploy-pages@v4
