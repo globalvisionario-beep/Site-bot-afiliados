@@ -3,10 +3,38 @@
     "titulo": "Achadinhos da Shopee",
     "subtitulo": "Digite o número que aparece no vídeo e vá direto ao produto."
   },
-  "atualizado_em": null,
+  "atualizado_em": "2026-10-23T18:17:31-03:00",
   "produtos": [
-    { "codigo": 1, "busca": "mini triturador eletrico" },
-    { "codigo": 2, "busca": "mini processador eletrico" }
+    {
+      "codigo": 1,
+      "busca": "mini triturador eletrico",
+      "itemId": 22399440310,
+      "nome": "Mini Processador de Alimentos Elétrico Triturador Portátil 3 Lâminas Inox Recarregável Branco",
+      "imagem": "https://cf.shopee.com.br/file/br-11134207-820lc-mmkfi6q2ldz8b3",
+      "preco": 22.28,
+      "preco_original": 96.87,
+      "desconto": 77,
+      "nota": 4.6,
+      "vendas": 3258,
+      "em_promocao": true,
+      "verificado_em": "2026-10-23T18:17:31-03:00",
+      "link": "https://s.shopee.com.br/50a4L2b8FP"
+    },
+    {
+      "codigo": 2,
+      "busca": "mini processador eletrico",
+      "itemId": 58217626503,
+      "nome": "mini processador de alimentos elétrico picador de alho triturador de pimenta 350ml",
+      "imagem": "https://cf.shopee.com.br/file/sg-11134201-825b6-msrflnne6qys46",
+      "preco": 22.99,
+      "preco_original": 287.38,
+      "desconto": 92,
+      "nota": 4.7,
+      "vendas": 3642,
+      "em_promocao": true,
+      "verificado_em": "2026-10-23T18:17:31-03:00",
+      "link": "https://s.shopee.com.br/5q9BKZy9T1"
+    }
   ],
   "historico_trocas": []
 }
