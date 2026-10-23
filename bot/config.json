@@ -1,0 +1,10 @@
+{
+  "nota_minima": 4.6,
+  "vendas_preferidas": 3000,
+  "vendas_minimas": 1000,
+  "desconto_minimo_percentual": 10,
+  "faixa_preco": [0.4, 1.6],
+  "paginas_busca": 2,
+  "itens_por_pagina": 50,
+  "max_trocas_por_execucao": 5
+}
