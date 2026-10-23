@@ -1,0 +1,12 @@
+{
+  "site": {
+    "titulo": "Achadinhos da Shopee",
+    "subtitulo": "Digite o número que aparece no vídeo e vá direto ao produto."
+  },
+  "atualizado_em": null,
+  "produtos": [
+    { "codigo": 1, "busca": "mini triturador eletrico" },
+    { "codigo": 2, "busca": "mini processador eletrico" }
+  ],
+  "historico_trocas": []
+}

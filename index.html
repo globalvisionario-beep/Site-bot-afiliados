@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Achadinhos da Shopee</title>
+<meta name="description" content="Links dos produtos dos vídeos, organizados por número.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F1F2F4;
+  --card: #FFFFFF;
+  --ink: #16181D;
+  --muted: #5F6673;
+  --line: #E1E3E8;
+  --accent: #D93B1D;
+  --accent-ink: #FFFFFF;
+  --ok: #0B7A4B;
+  --badge-bg: #16181D;
+  --badge-ink: #FFFFFF;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121316;
+    --card: #1B1D22;
+    --ink: #F2F3F5;
+    --muted: #9AA1AE;
+    --line: #2B2E35;
+    --accent: #FF6A4D;
+    --accent-ink: #1A0A06;
+    --ok: #4ADE9B;
+    --badge-bg: #F2F3F5;
+    --badge-ink: #16181D;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+header { padding: 40px 0 24px; }
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 7vw, 48px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.sub { margin: 0 0 24px; color: var(--muted); font-size: 17px; max-width: 46ch; }
+
+.busca { position: relative; max-width: 520px; }
+.busca input {
+  width: 100%;
+  padding: 18px 20px;
+  font: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  outline: none;
+}
+.busca input::placeholder { color: var(--muted); font-weight: 500; }
+.busca input:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent); }
+
+#status { min-height: 24px; margin: 14px 0 0; color: var(--muted); font-size: 15px; }
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding-bottom: 40px;
+}
+@media (min-width: 720px) { .grade { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+@media (min-width: 1000px) { .grade { grid-template-columns: repeat(4, 1fr); } }
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.foto { position: relative; aspect-ratio: 1; background: var(--line); }
+.foto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.num {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 12px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--badge-ink);
+  background: var(--badge-bg);
+  border-radius: 10px;
+}
+.corpo { display: flex; flex: 1; flex-direction: column; gap: 8px; padding: 12px; }
+.nome {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.precos { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.preco { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+.antes { color: var(--muted); font-size: 13px; text-decoration: line-through; }
+.desc { color: var(--ok); font-size: 13px; font-weight: 700; }
+.meta { display: flex; gap: 12px; color: var(--muted); font-size: 13px; }
+.aviso { margin: 0; color: var(--muted); font-size: 12px; }
+.botao {
+  margin-top: auto;
+  display: block;
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: 12px;
+  text-decoration: none;
+}
+.botao:hover { filter: brightness(1.06); }
+.botao:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+.vazio { grid-column: 1 / -1; padding: 32px 0; color: var(--muted); }
+.vazio button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  font: inherit;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+footer { padding: 8px 0 48px; color: var(--muted); font-size: 13px; max-width: 70ch; }
+footer p { margin: 0 0 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="titulo">Achadinhos da Shopee</h1>
+    <p class="sub" id="subtitulo">Digite o número que aparece no vídeo e vá direto ao produto.</p>
+    <div class="busca">
+      <label for="busca" hidden>Número do produto ou nome</label>
+      <input id="busca" type="search" inputmode="search" autocomplete="off" placeholder="Nº do vídeo ou nome">
+    </div>
+    <p id="status" aria-live="polite"></p>
+  </header>
+
+  <main>
+    <div class="grade" id="grade"></div>
+  </main>
+
+  <footer>
+    <p>Sou afiliado da Shopee: posso receber uma comissão pelas compras feitas pelos links desta página, sem custo extra para você.</p>
+    <p>Preços e promoções mudam ao longo do dia. Confira o valor final na Shopee antes de comprar. <span id="atualizado"></span></p>
+  </footer>
+</div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const brl = (v) => Number(v).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+const semAcento = (t) => String(t).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const vendas = (n) =>
+  n >= 1000
+    ? (n / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " mil vendidos"
+    : n + " vendidos";
+
+function el(tag, classe, texto) {
+  const e = document.createElement(tag);
+  if (classe) e.className = classe;
+  if (texto !== undefined) e.textContent = texto;
+  return e;
+}
+
+let produtos = [];
+
+function cartao(p) {
+  const item = el("article", "item");
+
+  const foto = el("div", "foto");
+  if (p.imagem) {
+    const img = el("img");
+    img.src = p.imagem;
+    img.alt = p.nome;
+    img.loading = "lazy";
+    foto.appendChild(img);
+  }
+  foto.appendChild(el("span", "num", "Nº " + p.codigo));
+  item.appendChild(foto);
+
+  const corpo = el("div", "corpo");
+  corpo.appendChild(el("h2", "nome", p.nome));
+
+  const precos = el("div", "precos");
+  precos.appendChild(el("span", "preco", brl(p.preco)));
+  if (p.em_promocao && p.desconto > 0) {
+    precos.appendChild(el("span", "antes", brl(p.preco_original)));
+    precos.appendChild(el("span", "desc", "-" + p.desconto + "%"));
+  }
+  corpo.appendChild(precos);
+
+  const meta = el("div", "meta");
+  if (p.nota) meta.appendChild(el("span", "", "★ " + Number(p.nota).toLocaleString("pt-BR")));
+  if (p.vendas) meta.appendChild(el("span", "", vendas(p.vendas)));
+  corpo.appendChild(meta);
+
+  if (p.em_promocao === false) {
+    corpo.appendChild(el("p", "aviso", "A promoção pode ter acabado. Confira o preço na Shopee."));
+  }
+
+  const botao = el("a", "botao", "Ver na Shopee");
+  botao.href = p.link;
+  botao.target = "_blank";
+  botao.rel = "noopener sponsored";
+  corpo.appendChild(botao);
+
+  item.appendChild(corpo);
+  return item;
+}
+
+function render() {
+  const bruto = $("#busca").value.trim();
+  const termo = bruto.replace(/^(produto|n[º°o]?|#)\s*/i, "");
+  let lista = produtos;
+
+  if (termo) {
+    lista = /^\d+$/.test(termo)
+      ? produtos.filter((p) => String(p.codigo) === termo)
+      : produtos.filter((p) => semAcento(p.nome).includes(semAcento(termo)));
+  }
+
+  const grade = $("#grade");
+  grade.replaceChildren();
+
+  if (!lista.length) {
+    const v = el("div", "vazio");
+    v.appendChild(
+      el("p", "", produtos.length ? "Nenhum produto com esse número ou nome. Confira o número que aparece no vídeo." : "Ainda não há produtos por aqui.")
+    );
+    if (termo && produtos.length) {
+      const b = el("button", "", "Ver todos os produtos");
+      b.type = "button";
+      b.onclick = () => { $("#busca").value = ""; render(); };
+      v.appendChild(b);
+    }
+    grade.appendChild(v);
+  } else {
+    lista.forEach((p) => grade.appendChild(cartao(p)));
+  }
+
+  $("#status").textContent = termo
+    ? lista.length + (lista.length === 1 ? " produto encontrado" : " produtos encontrados")
+    : "";
+
+  if (/^\d+$/.test(termo)) history.replaceState(null, "", "#" + termo);
+  else if (!termo) history.replaceState(null, "", location.pathname + location.search);
+}
+
+async function iniciar() {
+  try {
+    const r = await fetch("produtos.json?v=" + Date.now());
+    const dados = await r.json();
+    if (dados.site && dados.site.titulo) {
+      $("#titulo").textContent = dados.site.titulo;
+      document.title = dados.site.titulo;
+    }
+    if (dados.site && dados.site.subtitulo) $("#subtitulo").textContent = dados.site.subtitulo;
+    if (dados.atualizado_em) {
+      $("#atualizado").textContent =
+        "Atualizado em " + new Date(dados.atualizado_em).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" }) + ".";
+    }
+    produtos = (dados.produtos || [])
+      .filter((p) => p.link && p.nome)
+      .sort((a, b) => b.codigo - a.codigo);
+  } catch (e) {
+    $("#status").textContent = "Não foi possível carregar os produtos agora. Tente novamente em instantes.";
+  }
+  const hash = decodeURIComponent(location.hash.slice(1));
+  if (hash) $("#busca").value = hash;
+  render();
+}
+
+$("#busca").addEventListener("input", render);
+iniciar();
+</script>
+</body>
+</html>
