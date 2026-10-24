@@ -3,7 +3,7 @@
     "titulo": "Achadinhos da Shopee",
     "subtitulo": "Digite o número que aparece no vídeo e vá direto ao produto."
   },
-  "atualizado_em": "2026-10-23T18:17:31-03:00",
+  "atualizado_em": "2026-10-24T06:13:42-03:00",
   "produtos": [
     {
       "codigo": 1,
@@ -17,8 +17,8 @@
       "nota": 4.6,
       "vendas": 3258,
       "em_promocao": true,
-      "verificado_em": "2026-10-23T18:17:31-03:00",
-      "link": "https://s.shopee.com.br/50a4L2b8FP"
+      "verificado_em": "2026-10-24T06:13:42-03:00",
+      "link": "https://s.shopee.com.br/60SbWsxW84"
     },
     {
       "codigo": 2,
@@ -32,7 +32,7 @@
       "nota": 4.7,
       "vendas": 3642,
       "em_promocao": true,
-      "verificado_em": "2026-10-23T18:17:31-03:00",
+      "verificado_em": "2026-10-24T06:13:42-03:00",
       "link": "https://s.shopee.com.br/5q9BKZy9T1"
     }
   ],
