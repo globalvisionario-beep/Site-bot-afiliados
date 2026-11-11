@@ -3,7 +3,7 @@
     "titulo": "Achadinhos da Shopee",
     "subtitulo": "Digite o número que aparece no vídeo e vá direto ao produto."
   },
-  "atualizado_em": "2026-11-10T06:40:51-03:00",
+  "atualizado_em": "2026-11-11T06:43:48-03:00",
   "produtos": [
     {
       "codigo": 1,
@@ -11,13 +11,13 @@
       "itemId": 22399440310,
       "nome": "Mini Processador de Alimentos Elétrico Triturador Portátil 3 Lâminas Inox Recarregável Branco",
       "imagem": "https://cf.shopee.com.br/file/br-11134207-820lc-mmkfi6q2ldz8b3",
-      "preco": 22.28,
-      "preco_original": 96.87,
-      "desconto": 77,
+      "preco": 20.0,
+      "preco_original": 100.0,
+      "desconto": 80,
       "nota": 4.6,
-      "vendas": 2667,
+      "vendas": 2578,
       "em_promocao": true,
-      "verificado_em": "2026-11-10T06:40:51-03:00",
+      "verificado_em": "2026-11-11T06:43:48-03:00",
       "link": "https://s.shopee.com.br/qkvj9QvaD"
     },
     {
@@ -30,10 +30,10 @@
       "preco_original": 287.38,
       "desconto": 92,
       "nota": 4.7,
-      "vendas": 7130,
+      "vendas": 7265,
       "em_promocao": true,
-      "verificado_em": "2026-11-10T06:40:51-03:00",
-      "link": "https://s.shopee.com.br/2LZl6KOZV7"
+      "verificado_em": "2026-11-11T06:43:48-03:00",
+      "link": "https://s.shopee.com.br/1BNpJHFP0w"
     }
   ],
   "historico_trocas": []
