@@ -3,7 +3,7 @@
     "titulo": "Achadinhos da Shopee",
     "subtitulo": "Digite o número que aparece no vídeo e vá direto ao produto."
   },
-  "atualizado_em": "2026-11-19T14:45:28-03:00",
+  "atualizado_em": "2026-11-20T14:22:40-03:00",
   "produtos": [
     {
       "codigo": 1,
@@ -15,9 +15,9 @@
       "preco_original": 96.87,
       "desconto": 77,
       "nota": 4.6,
-      "vendas": 1367,
+      "vendas": 1253,
       "em_promocao": true,
-      "verificado_em": "2026-11-19T14:45:28-03:00",
+      "verificado_em": "2026-11-20T14:22:40-03:00",
       "link": "https://s.shopee.com.br/1W0t05pE9n"
     },
     {
@@ -26,13 +26,13 @@
       "itemId": 58217626503,
       "nome": "mini processador de alimentos elétrico picador de alho triturador de pimenta 350ml",
       "imagem": "https://cf.shopee.com.br/file/sg-11134201-825b6-msrflnne6qys46",
-      "preco": 22.99,
-      "preco_original": 287.38,
+      "preco": 23.99,
+      "preco_original": 299.88,
       "desconto": 92,
       "nota": 4.7,
-      "vendas": 7870,
+      "vendas": 7983,
       "em_promocao": true,
-      "verificado_em": "2026-11-19T14:45:28-03:00",
+      "verificado_em": "2026-11-20T14:22:40-03:00",
       "link": "https://s.shopee.com.br/1LhSnmuGH4"
     }
   ],
